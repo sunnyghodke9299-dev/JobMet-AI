@@ -1,0 +1,25 @@
+# Environment files
+.env
+.env.*
+!.env.example
+Backend/.env
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+
+# Node
+node_modules/
+Frontend/node_modules/
+
+# Build
+dist/
+build/
+
+# Logs
+*.log
+
+# VS Code
+.vscode/
