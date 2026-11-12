@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 
 function Login() {
   const navigate = useNavigate();
@@ -153,9 +153,9 @@ function Login() {
         <p className="auth-footer">
           Don't have an account?{" "}
 
-          <a href="/register">
-            Create Account
-          </a>
+          <Link to="/register">
+  Create Account
+</Link>
         </p>
 
       </div>
