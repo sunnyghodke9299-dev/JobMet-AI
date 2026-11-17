@@ -29,7 +29,7 @@ CORS(app)
 # JWT CONFIGURATION
 # =========================
 
-app.config["JWT_SECRET_KEY"] = "jobmate-ai-development-secret-key"
+app.config["JWT_SECRET_KEY"] = os.getenv("JWT_SECRET_KEY")
 jwt = JWTManager(app)
 
 
@@ -39,13 +39,12 @@ jwt = JWTManager(app)
 
 def get_db_connection():
     connection = mysql.connector.connect(
-        host="localhost",
-        user="root",
-        password="MyNewPass123!",
-        database="jobmate_ai",
-        port=3306
+        host=os.getenv("DB_HOST"),
+        user=os.getenv("DB_USER"),
+        password=os.getenv("DB_PASSWORD"),
+        database=os.getenv("DB_NAME"),
+        port=int(os.getenv("DB_PORT", 3306))
     )
-
     return connection
 
 # =========================
